@@ -30,7 +30,7 @@ class EntityTrack {
       });
       this.dispatch.hook(packets.abnorm_end.name, packets.abnorm_end.version, (event) => {
         if (event.target.toString() in this.players){
-          delete this.players[event.gameId].abnormalities[event.id]
+          delete this.players[event.target.toString()].abnormalities[event.id]
         }
       });
     }
